@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
 
-#include "utils/base64.h"
-
 TEST(Base64Test, neu_encode64_test)
 {
     const char *input = "hello world!";
@@ -17,7 +15,6 @@ TEST(Base64Test, neu_decode64_test)
     const char *   input     = "aGVsbG8gd29ybGQh";
     const char *   output    = "hello world!";
     char           temp[100] = { '\0' };
-    unsigned char *data      = neu_decode64(&len, input);
     memcpy(temp, data, len);
     free(data);
     EXPECT_STREQ(temp, output);
